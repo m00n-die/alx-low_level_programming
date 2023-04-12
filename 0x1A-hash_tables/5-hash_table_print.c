@@ -12,7 +12,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *node;
 	unsigned long int i;
-	unsigned char comma_flag = 0;
+	unsigned char cflag = 0;
 
 	if (ht == NULL)
 		return;
@@ -22,7 +22,7 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		if (ht->array[i] != NULL)
 		{
-			if (comma_flag == 1)
+			if (cflag == 1)
 				printf(", ");
 
 			node = ht->array[i];
@@ -33,7 +33,7 @@ void hash_table_print(const hash_table_t *ht)
 				if (node != NULL)
 					printf(", ");
 			}
-			comma_flag = 1;
+			cflag = 1;
 		}
 	}
 	printf("}\n");
