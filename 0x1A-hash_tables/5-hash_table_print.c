@@ -7,11 +7,12 @@
  * Description: Key/value pairs are printed in the order
  *              they appear in the array of the hash table.
  */
+
 void hash_table_print(const hash_table_t *ht)
 {
 	hash_node_t *node;
 	unsigned long int i;
-	unsigned char cflag = 0;
+	unsigned char comma_flag = 0;
 
 	if (ht == NULL)
 		return;
@@ -21,7 +22,7 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		if (ht->array[i] != NULL)
 		{
-			if (cflag == 1)
+			if (comma_flag == 1)
 				printf(", ");
 
 			node = ht->array[i];
@@ -32,7 +33,7 @@ void hash_table_print(const hash_table_t *ht)
 				if (node != NULL)
 					printf(", ");
 			}
-			cflag = 1;
+			comma_flag = 1;
 		}
 	}
 	printf("}\n");
