@@ -6,6 +6,8 @@
   * @left: start of the array
   * @right: end of the array
   * @element: element being searched for
+  *
+  * Return: Index of element
   */
 
 int recursiveBinarySearch(int *array, size_t left, size_t right, int element)
