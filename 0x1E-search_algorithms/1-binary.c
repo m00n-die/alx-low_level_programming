@@ -13,20 +13,18 @@
 int recursiveBinarySearch(int *array, size_t left, size_t right, int element)
 {
 	size_t i = 0;
+	size_t middle = (left + (right - left) / 2);
 
 
 	if (array == NULL || right == 0)
 		return (-1);
-
-	printf("Searching in array");
-
-	for (i = 0; i < right; i++)
-		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
-	printf("\n");
-
-	if (left <= right)
+	if (left < right)
 	{
-		size_t middle = (left + (right - left) / 2);
+		printf("Searching in array: ");
+
+		for (i = left; i < right - 1; i++)
+			printf("%d, ", array[i]);
+		printf("%d\n", array[i]);
 
 		if (array[middle] == element)
 			return (middle);
